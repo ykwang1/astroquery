@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.8.1: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.10: http://docutils.sourceforge.net/" />
 <title></title>
 <link rel="stylesheet" href="stylesheets/styles.css" type="text/css" />
 <link rel="stylesheet" href="stylesheets/pygment_trac.css" type="text/css" />
@@ -21,65 +21,37 @@
 contains a collection of tools to access online Astronomical data. Each web
 service has its own sub-package. For example, to interface with the <a class="reference external" href="http://simbad.u-strasbg.fr/simbad/">SIMBAD
 website</a>, use the <tt class="docutils literal">simbad</tt> sub-package:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">README.rst</tt>, line 13)</p>
-<p>Unknown directive type &quot;code-block&quot;.</p>
-<pre class="literal-block">
-.. code-block:: python
-
-    &gt;&gt;&gt; from astroquery.simbad import Simbad
-    &gt;&gt;&gt; theta1c = Simbad.query_object('tet01 Ori C')
-    &gt;&gt;&gt; theta1c.pprint()
-       MAIN_ID          RA           DEC      ... COO_QUAL COO_WAVELENGTH     COO_BIBCODE
-    ------------- ------------- ------------- ... -------- -------------- -------------------
-    * tet01 Ori C 05 35 16.4637 -05 23 22.848 ...        A              O 2007A&amp;A...474..653V
-
+<pre class="code python literal-block">
+<span class="operator">&gt;&gt;&gt;</span> <span class="keyword namespace">from</span> <span class="name namespace">astroquery.simbad</span> <span class="keyword namespace">import</span> <span class="name">Simbad</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">theta1c</span> <span class="operator">=</span> <span class="name">Simbad</span><span class="operator">.</span><span class="name">query_object</span><span class="punctuation">(</span><span class="literal string">'tet01 Ori C'</span><span class="punctuation">)</span>
+<span class="operator">&gt;&gt;&gt;</span> <span class="name">theta1c</span><span class="operator">.</span><span class="name">pprint</span><span class="punctuation">()</span>
+   <span class="name">MAIN_ID</span>          <span class="name">RA</span>           <span class="name">DEC</span>      <span class="operator">...</span> <span class="name">COO_QUAL</span> <span class="name">COO_WAVELENGTH</span>     <span class="name">COO_BIBCODE</span>
+<span class="operator">-------------</span> <span class="operator">-------------</span> <span class="operator">-------------</span> <span class="operator">...</span> <span class="operator">--------</span> <span class="operator">--------------</span> <span class="operator">-------------------</span>
+<span class="operator">*</span> <span class="name">tet01</span> <span class="name">Ori</span> <span class="name">C</span> <span class="literal number oct">05</span> <span class="literal number integer">35</span> <span class="literal number float">16.4637</span> <span class="operator">-</span><span class="literal number oct">05</span> <span class="literal number integer">23</span> <span class="literal number float">22.848</span> <span class="operator">...</span>        <span class="name">A</span>              <span class="name">O</span> <span class="literal number integer">2007</span><span class="name">A</span><span class="operator">&amp;</span><span class="name">A</span><span class="operator">...</span><span class="literal number float">474.</span><span class="operator">.</span><span class="literal number integer">653</span><span class="name">V</span>
 </pre>
-</div>
 <div class="section" id="installation-and-requirements">
 <h2>Installation and Requirements</h2>
 <p>As an <a class="reference external" href="http://www.astropy.org">astropy</a> affiliate, astroquery requires <a class="reference external" href="http://www.astropy.org">astropy</a>.  However, because
 astroquery relies heavily upon the <tt class="docutils literal">astropy.coordinates</tt> module, the
 development version of <a class="reference external" href="http://www.astropy.org">astropy</a> is required. <a class="reference external" href="http://www.astropy.org">astropy</a> can be installed from
 pip:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">README.rst</tt>, line 31)</p>
-<p>Unknown directive type &quot;code-block&quot;.</p>
-<pre class="literal-block">
-.. code-block:: bash
-
-    $ pip install git+http://github.com/astropy/astropy.git#egg=astropy
-
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>pip install git+http://github.com/astropy/astropy.git#egg<span class="operator">=</span>astropy
 </pre>
-</div>
 <p>astroquery uses the <a class="reference external" href="http://docs.python-requests.org/en/latest/">requests</a>
 module to communicate with the internet.  <a class="reference external" href="http://docs.python-requests.org/en/latest/">requests</a> can also be installed with
 pip.</p>
 <p>As of July 2013, astroquery is in pre-release state, so to install, you need to
 clone it:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">README.rst</tt>, line 42)</p>
-<p>Unknown directive type &quot;code-block&quot;.</p>
-<pre class="literal-block">
-.. code-block:: bash
-
-    $ git clone git&#64;github.com:astropy/astroquery.git
-    $ cd astroquery
-    $ python setup.py install
-
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>git clone git&#64;github.com:astropy/astroquery.git
+<span class="name variable">$ </span><span class="name builtin">cd </span>astroquery
+<span class="name variable">$ </span>python setup.py install
 </pre>
-</div>
 <p>pip install also works:</p>
-<div class="system-message">
-<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">README.rst</tt>, line 50)</p>
-<p>Unknown directive type &quot;code-block&quot;.</p>
-<pre class="literal-block">
-.. code-block:: bash
-
-    $ pip install git+http://github.com/astropy/astroquery.git#egg=astroquery
-
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>pip install git+http://github.com/astropy/astroquery.git#egg<span class="operator">=</span>astroquery
 </pre>
-</div>
 </div>
 <div class="section" id="using-astroquery">
 <h2>Using astroquery</h2>
