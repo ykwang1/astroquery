@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="generator" content="Docutils 0.11: http://docutils.sourceforge.net/" />
+<meta name="generator" content="Docutils 0.12: http://docutils.sourceforge.net/" />
 <title></title>
 <link rel="stylesheet" href="stylesheets/styles.css" type="text/css" />
 <link rel="stylesheet" href="stylesheets/pygment_trac.css" type="text/css" />
@@ -14,7 +14,7 @@
 <div class="document">
 
 
-<p><a class="reference external" href="http://astroquery.readthedocs.org">Documentation</a> | <a class="reference external" href="http://astropy.org/astroquery-blog">Blog</a> |  <a class="reference external" href="https://github.com/astropy/astroquery/">View on Github</a> |  <a class="reference external" href="https://github.com/astropy/astroquery/zipball/stable">Download Stable ZIP</a>  |  <a class="reference external" href="https://github.com/astropy/astroquery/tarball/stable">Download Stable TAR</a></p>
+<p><a class="reference external" href="http://astroquery.readthedocs.io">Documentation</a> | <a class="reference external" href="http://astropy.org/astroquery-blog">Blog</a> |  <a class="reference external" href="https://github.com/astropy/astroquery/">View on Github</a> |  <a class="reference external" href="https://github.com/astropy/astroquery/zipball/stable">Download Stable ZIP</a>  |  <a class="reference external" href="https://github.com/astropy/astroquery/tarball/stable">Download Stable TAR</a></p>
 <div class="section" id="accessing-online-astronomical-data">
 <h1>Accessing Online Astronomical Data</h1>
 <p>Astroquery is an <a class="reference external" href="http://www.astropy.org">astropy</a> affiliated package that
@@ -34,11 +34,15 @@ website</a>, use the <tt class="docutils literal">simbad</tt> sub-package:</p>
 <p>Astroquery works with Python 2.7 and 3.3 or later.
 As an <a class="reference external" href="http://www.astropy.org">astropy</a> affiliate, astroquery requires <a class="reference external" href="http://www.astropy.org">astropy</a> version 0.4 or later.</p>
 <p>astroquery uses the <a class="reference external" href="http://docs.python-requests.org/en/latest/">requests</a>
-module to communicate with the internet.  <a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> is needed for HTML parsing
+module to communicate with the internet.  <a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>  and <a class="reference external" href="https://html5lib.readthedocs.io/en/latest/">html5lib'</a> are needed for HTML parsing
 for some services.  The <a class="reference external" href="https://pypi.python.org/pypi/keyring">keyring</a>
 module is also required for accessing services that require a login.
 These can all be installed using <a class="reference external" href="https://pypi.python.org/pypi/pip">pip</a>.</p>
-<p>The latest version of astroquery can be pip installed:</p>
+<p>The latest version of astroquery can be conda installed:</p>
+<pre class="code bash literal-block">
+<span class="name variable">$ </span>conda install -c astropy astroquery
+</pre>
+<p>or pip installed:</p>
 <pre class="code bash literal-block">
 <span class="name variable">$ </span>pip install astroquery
 </pre>
@@ -59,12 +63,12 @@ These can all be installed using <a class="reference external" href="https://pyp
 <div class="section" id="using-astroquery">
 <h2>Using astroquery</h2>
 <p>Importing astroquery on its own doesn't get you much: you need to import each
-sub-module specifically.  Check out the <a class="reference external" href="http://astroquery.readthedocs.org">docs</a>
-to find a list of the tools available.  The <a class="reference external" href="http://astroquery.readthedocs.org/en/latest/api.html">API</a>
+sub-module specifically.  Check out the <a class="reference external" href="http://astroquery.readthedocs.io">docs</a>
+to find a list of the tools available.  The <a class="reference external" href="http://astroquery.readthedocs.io/en/latest/api.html">API</a>
 shows the standard suite of tools common to most modules, e.g. <cite>query_object</cite>
 and <cite>query_region</cite>.</p>
 <p>To report bugs and request features, please use the issue tracker.  Code
-contributions are very welcome, though we encourage you to follow the <a class="reference external" href="http://astroquery.readthedocs.org/en/latest/api.html">API</a>
+contributions are very welcome, though we encourage you to follow the <a class="reference external" href="http://astroquery.readthedocs.io/en/latest/api.html">API</a>
 and <a class="reference external" href="https://github.com/astropy/astroquery/blob/master/CONTRIBUTING.rst">contributing guidelines</a> as much
 as possible.</p>
 </div>
@@ -72,29 +76,31 @@ as possible.</p>
 <h2>List of Modules</h2>
 <blockquote>
 <ul class="simple">
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/simbad/simbad.html">Simbad</a>:           Basic data, cross-identifications, bibliography and measurements for astronomical objects outside the solar system.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/vizier/vizier.html">Vizier</a>:           Set of 11,000+ published, multiwavelength catalogues hosted by the CDS.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/irsa_dust/irsa_dust.html">IRSA dust</a>:     Galactic dust reddening and extinction maps from IRAS 100 um data.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/ned/ned.html">NED</a>:                 NASA/IPAC Extragalactic Database. Multiwavelength data from both surveys and publications.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/irsa/irsa.html">IRSA</a>:               NASA/IPAC Infrared Science Archive. Science products for all of NASA's infrared and sub-mm missions.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/ukidss/ukidss.html">UKIDSS</a>:           UKIRT Infrared Deep Sky Survey. JHK images of 7500 sq deg. in the northern sky.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/magpis/magpis.html">MAGPIS</a>:           Multi-Array Galactic Plane Imaging Survey. 6 and 20-cm radio images of the Galactic plane from the VLA.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/nrao/nrao.html">NRAO</a>:               Science data archive of the National Radio Astronomy Observatory. VLA, JVLA, VLBA and GBT data products.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/besancon/besancon.html">Besancon</a>:       Model of stellar population synthesis in the Galaxy.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/nist/nist.html">NIST</a>:               National Institute of Standards and Technology (NIST) atomic lines database.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/fermi/fermi.html">Fermi</a>:             Fermi gamma-ray telescope archive.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/sdss/sdss.html">SDSS</a>:               Sloan Digital Sky Survey data, including optical images, spectra, and spectral templates.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/alfalfa/alfalfa.html">Alfalfa</a>:         Arecibo Legacy Fast ALFA survey; extragalactic HI radio data.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/sha/sha.html">SHA</a>:                 Spitzer Heritage Archive; infrared data products from the Spitzer Space Telescope</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/lamda/lamda.html">Lamda</a>:             Leiden Atomic and Molecular Database; energy levels, radiative transitions, and collisional rates for astrophysically relevant atoms and molecules.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/ogle/ogle.html">Ogle</a>:               Optical Gravitational Lensing Experiment III; information on interstellar extinction towards the Galactic bulge.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/splatalogue/splatalogue.html">Splatalogue</a>: National Radio Astronomy Observatory (NRAO)-maintained (mostly) molecular radio and millimeter line list service.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/cosmosim/cosmosim.html">CosmoSim</a>: The CosmoSim database provides results from cosmological simulations performed within different projects: the MultiDark project, the BolshoiP project, and the CLUES project.</li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/eso/eso.html">ESO Archive</a></li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/alma/alma.html">ALMA Archive</a></li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/gama/gama.html">GAMA database</a></li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/nvas/nvas.html">NVAS archive</a></li>
-<li><a class="reference external" href="http://astroquery.readthedocs.org/en/latest/open_exoplanet_catalogue/open_exoplanet_catalogue.html">Open Expolanet Catalog (OEC)</a></li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/simbad/simbad.html">Simbad</a>:           Basic data, cross-identifications, bibliography and measurements for astronomical objects outside the solar system.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/vizier/vizier.html">Vizier</a>:           Set of 11,000+ published, multiwavelength catalogues hosted by the CDS.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/esasky/esasky.html">ESASky</a>:           ESASky is a science driven discovery portal providing easy visualizations and full access to the entire sky as observed with ESA Space astronomy missions.</li>
+<li><a href="#id1"><span class="problematic" id="id2">`IRSA Image Server program interface (IBE) Query Tool&lt;http://astroquery.readthedocs.io/en/latest/ibe/ibe.html&gt;`_</span></a>: provides access to the 2MASS, WISE, and PTF image archives.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/irsa/irsa_dust.html">IRSA dust</a>:     Galactic dust reddening and extinction maps from IRAS 100 um data.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/ned/ned.html">NED</a>:                 NASA/IPAC Extragalactic Database. Multiwavelength data from both surveys and publications.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/irsa/irsa.html">IRSA</a>:               NASA/IPAC Infrared Science Archive. Science products for all of NASA's infrared and sub-mm missions.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/ukidss/ukidss.html">UKIDSS</a>:           UKIRT Infrared Deep Sky Survey. JHK images of 7500 sq deg. in the northern sky.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/magpis/magpis.html">MAGPIS</a>:           Multi-Array Galactic Plane Imaging Survey. 6 and 20-cm radio images of the Galactic plane from the VLA.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/nrao/nrao.html">NRAO</a>:               Science data archive of the National Radio Astronomy Observatory. VLA, JVLA, VLBA and GBT data products.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/besancon/besancon.html">Besancon</a>:       Model of stellar population synthesis in the Galaxy.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/nist/nist.html">NIST</a>:               National Institute of Standards and Technology (NIST) atomic lines database.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/fermi/fermi.html">Fermi</a>:             Fermi gamma-ray telescope archive.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/sdss/sdss.html">SDSS</a>:               Sloan Digital Sky Survey data, including optical images, spectra, and spectral templates.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/alfalfa/alfalfa.html">Alfalfa</a>:         Arecibo Legacy Fast ALFA survey; extragalactic HI radio data.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/sha/sha.html">SHA</a>:                 Spitzer Heritage Archive; infrared data products from the Spitzer Space Telescope</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/lamda/lamda.html">Lamda</a>:             Leiden Atomic and Molecular Database; energy levels, radiative transitions, and collisional rates for astrophysically relevant atoms and molecules.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/ogle/ogle.html">Ogle</a>:               Optical Gravitational Lensing Experiment III; information on interstellar extinction towards the Galactic bulge.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/splatalogue/splatalogue.html">Splatalogue</a>: National Radio Astronomy Observatory (NRAO)-maintained (mostly) molecular radio and millimeter line list service.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/cosmosim/cosmosim.html">CosmoSim</a>: The CosmoSim database provides results from cosmological simulations performed within different projects: the MultiDark project, the BolshoiP project, and the CLUES project.</li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/eso/eso.html">ESO Archive</a></li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/alma/alma.html">ALMA Archive</a></li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/gama/gama.html">GAMA database</a></li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/nvas/nvas.html">NVAS archive</a></li>
+<li><a class="reference external" href="http://astroquery.readthedocs.io/en/latest/open_exoplanet_catalogue/open_exoplanet_catalogue.html">Open Expolanet Catalog (OEC)</a></li>
 </ul>
 </blockquote>
 </div>
@@ -108,14 +114,20 @@ as possible.</p>
 <h2>Badges</h2>
 <a class="reference external image-reference" href="https://crate.io/packages/astroquery/"><img alt="Latest PyPI version" src="https://pypip.in/v/astroquery/badge.png" /></a>
 <a class="reference external image-reference" href="https://crate.io/packages/astroquery/"><img alt="Number of PyPI downloads" src="https://pypip.in/d/astroquery/badge.png" /></a>
-<img alt="https://travis-ci.org/astropy/astroquery.svg?branch=master" src="https://travis-ci.org/astropy/astroquery.svg?branch=master" />
+<a class="reference external image-reference" href="https://travis-ci.org/astropy/astroquery"><img alt="https://travis-ci.org/astropy/astroquery.svg?branch=master" src="https://travis-ci.org/astropy/astroquery.svg?branch=master" /></a>
 <a class="reference external image-reference" href="https://coveralls.io/r/astropy/astroquery"><img alt="https://coveralls.io/repos/astropy/astroquery/badge.png" src="https://coveralls.io/repos/astropy/astroquery/badge.png" /></a>
 <a class="reference external image-reference" href="https://gitter.im/astropy/astroquery"><img alt="https://badges.gitter.im/astropy/astroquery.png" src="https://badges.gitter.im/astropy/astroquery.png" /></a>
-<a class="reference external image-reference" href="http://dx.doi.org/10.5281/zenodo.11656"><img alt="https://zenodo.org/badge/3821/astropy/astroquery.png" src="https://zenodo.org/badge/3821/astropy/astroquery.png" /></a>
+<a class="reference external image-reference" href="http://dx.doi.org/10.5281/zenodo.44961"><object data="https://zenodo.org/badge/doi/10.5281/zenodo.44961.svg" type="image/svg+xml">https://zenodo.org/badge/doi/10.5281/zenodo.44961.svg</object></a>
 <!-- .. image:: https://d2weczhvl823v0.cloudfront.net/astropy/astroquery/trend.png -->
 <!-- :alt: Bitdeli badge -->
 <!-- :target: https://bitdeli.com/free -->
 </div>
+</div>
+<div class="system-messages section">
+<h1>Docutils System Messages</h1>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">README.rst</tt>, line 86); <em><a href="#id2">backlink</a></em></p>
+Unknown target name: &quot;irsa image server program interface (ibe) query tool&lt;http://astroquery.readthedocs.io/en/latest/ibe/ibe.html&gt;&quot;.</div>
 </div>
 </div>
 </body>
