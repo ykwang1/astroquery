@@ -22,6 +22,7 @@ import os
 
 from . import conf
 from astropy import log
+from astropy.coordinates import SkyCoord
 
 
 __all__ = ['XMMNewton', 'XMMNewtonClass']
@@ -268,6 +269,7 @@ class XMMNewtonClass(BaseQuery):
         else:
             return columns
 
+<<<<<<< HEAD
     def _parse_filename(self, filename):
         """Parses the file's name of a product
 
@@ -437,17 +439,27 @@ class XMMNewtonClass(BaseQuery):
                           coordinates=None, radius=None):
         """Downloads the European Photon Imaging Camera (EPIC)
         metadata from a given target
+=======
+    def get_epic_metadata(self, *, target_name=None,
+                          coordinates=None, radius=None):
+        """Downloads the EPIC metadata from a given target
+>>>>>>> f5368f99... Download EPIC metadata from TAP by target name or coordinates. issues: 925,934
 
         Parameters
         ----------
         target_name : string, optional, default None
             The name of the target
+<<<<<<< HEAD
         coordinates : `~astropy.coordinates.SkyCoord`, optinal, default None
+=======
+        coordinates : astropy.coordinates.SkyCoord, optinal, default None
+>>>>>>> f5368f99... Download EPIC metadata from TAP by target name or coordinates. issues: 925,934
             The coordinates of the target in a SkyCoord object
         radius : float, optional, default None
             The radius to query the target in degrees
         Returns
         -------
+<<<<<<< HEAD
         epic_source,  cat_4xmm, stack_4xmm, slew_source : `~astropy.table.Table` objects
             Tables containing the metadata of the target
         """
@@ -455,6 +467,15 @@ class XMMNewtonClass(BaseQuery):
                 raise Exception("Input parameters needed, "
                                 "please provide the name "
                                 "or the coordinates of the target")
+=======
+        Four astropy.table.table.Table containing the metadata
+        of the given target
+        """
+        if not target_name and not coordinates:
+                raise Exception(("Input parameters needed, "
+                                 "please provide the name "
+                                 "or the coordinates of the target"))
+>>>>>>> f5368f99... Download EPIC metadata from TAP by target name or coordinates. issues: 925,934
 
         epic_source = {"table": "xsa.v_epic_source",
                        "column": "epic_source_equatorial_spoint"}
@@ -480,8 +501,6 @@ class XMMNewtonClass(BaseQuery):
         query_fmt = ("select {} from {} "
                      "where 1=contains({}, circle('ICRS', {}, {}, {}));")
         epic_source_table = self.query_xsa_tap(query_fmt.format(cols,
-                                               epic_source["table"],
-                                               epic_source["column"],
                                                c.ra.degree,
                                                c.dec.degree,
                                                radius))
