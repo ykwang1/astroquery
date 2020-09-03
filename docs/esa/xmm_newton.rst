@@ -121,6 +121,7 @@ This will show the available tables in XSA TAP service in the XMM-Newton Science
   'proposal_oid', 'proprietary_end_date', 'ra', 'ra_nom', 'revolution', 'sas_version', 'start_utc', 'stc_s', 'with_science']
 
 This will show the column details of the table 'v_all_observations' in XSA TAP service in the XMM-Newton Science Archive.
+<<<<<<< HEAD
 
 --------------------------------------------
 6. Getting EPIC images from a given TAR file 
@@ -137,11 +138,20 @@ This will extract the European Photon Imaging Camera (EPIC) images within the sp
 
 ------------------------------------------------------------------------------
 7. Getting the European Photon Imaging Camera (EPIC) metadata from the XSA TAP 
+=======
+            
+------------------------------------------------------------------------------
+6. Getting the European Photon Imaging Camera (EPIC) metadata from the XSA TAP 
+>>>>>>> b856fd2c... Documentation of issues 925 and 934
 ------------------------------------------------------------------------------
 
 This function retrieves the EPIC metadata from a given target.
 
+<<<<<<< HEAD
 The target must be defined with either a source name or a `~astropy.coordinates.SkyCoord` object.
+=======
+The target must be defined with either a source name or a astropy.coordinates.SkyCoord object.
+>>>>>>> b856fd2c... Documentation of issues 925 and 934
 
 The EPIC metadata can be found in four tables in the XSA TAP:
 
@@ -162,7 +172,7 @@ This will extract the European Photon Imaging Camera (EPIC) images within the sp
   >>> epic_source, cat_4xmm, stack_4xmm, slew_source = XMMNewton.get_epic_metadata(target_name="4XMM J122934.7+015657")
 
 This will return the metadata within the four TAP tables in four `~astropy.table.Table` for the given target.
-
+=======
 Reference/API
 =============
 

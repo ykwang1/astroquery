@@ -91,6 +91,7 @@ class TestXMMNewton():
         xsa = XMMNewtonClass(self.get_dummy_tap_handler())
         xsa.get_columns("table", only_names=True, verbose=True)
         dummyTapHandler.check_call("get_columns", parameters2)
+<<<<<<< HEAD
 
 <<<<<<< HEAD
     _files = {
@@ -356,3 +357,5 @@ class TestXMMNewton():
         print(t4)
         xsa.get_epic_metadata(coordinates=SkyCoord.from_name("4XMM J122934.7+015657", parse=True))
 >>>>>>> f5368f99... Download EPIC metadata from TAP by target name or coordinates. issues: 925,934
+=======
+>>>>>>> b856fd2c... Documentation of issues 925 and 934
